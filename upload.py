@@ -13,10 +13,10 @@ client = session.client('s3',
 
 # files_list = []
 for city in ["rj","sp","df","cwb"]:
-    path = f"/home/felipe/dados_vm/{city}"
+    path = f"/home/felipe/coleta2/{city}"
     for number,filename in enumerate(os.listdir(path)):
         # files_list.append(filename)
-        client.upload_file(f"/home/felipe/dados_vm/{city}/{filename}",'brbus-dataset',f'bronze/{city}/{filename}')
+        client.upload_file(f"/home/felipe/coleta2/{city}/{filename}",'brbus-dataset',f'bronze/{city}/{filename}')
         print(number)
 
     
