@@ -1,7 +1,12 @@
 import os
 import boto3
-SPACES_KEY = "DO00LNFAEQRLTA82CJCM"
-SPACES_SECRET = "cOWHXzPEeesRVZSJDp/maav9CcnqYyyaOFh2HNWHcJ0"
+from dotenv import load_dotenv
+
+
+load_dotenv()
+SPACES_KEY = os.getenv("SPACES_KEY")
+SPACES_SECRET = os.getenv("SPACES_SECRET")
+
 
 session = boto3.session.Session()
 client = session.client('s3',
